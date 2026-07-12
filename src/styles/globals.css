@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F1F5F9;
+  
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #64748B;
+  --color-text-muted: #94A3B8;
+  
+  --color-border: #E2E8F0;
+  --color-border-strong: #CBD5E1;
+  
+  --color-primary: #4F46E5;
+  --color-primary-hover: #4338CA;
+  --color-primary-soft: #EEF2FF;
+  
+  --color-success: #15803D;
+  --color-success-soft: #DCFCE7;
+  
+  --color-warning: #B45309;
+  --color-warning-soft: #FEF3C7;
+  
+  --color-danger: #B91C1C;
+  --color-danger-soft: #FEE2E2;
+  
+  --color-info: #0369A1;
+  --color-info-soft: #E0F2FE;
+  
+  --font-sans: "Inter", sans-serif;
+  
+  --radius-input: 8px;
+  --radius-button: 8px;
+  --radius-card: 12px;
+  --radius-modal: 16px;
+  --radius-badge: 9999px;
+  
+  --shadow-subtle: 0 1px 2px rgb(15 23 42 / 0.04);
+}
+
+@utility animate-slide-in {
+  animation: slide-in 0.2s ease-out forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #F8FAFC;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Visible focus outlines for keyboard navigation */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: none;
+    ring: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
