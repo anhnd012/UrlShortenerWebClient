@@ -16,10 +16,11 @@ export function formatLocalDateTime(date: Date): string {
   return format(date, "yyyy-MM-dd'T'HH:mm:ss");
 }
 
-export function formatReadableDate(dateStr: string, timezone?: string): string {
+export function formatReadableDate(dateStr?: string, timezone?: string): string {
+  if (!dateStr) return '';
   try {
     const date = new Date(dateStr);
-    if (isNaN(date.getTime())) return dateStr;
+    if (isNaN(date.getTime())) return dateStr || '';
     
     // Format readable date like "July 20, 2026, 11:59 PM"
     const options: Intl.DateTimeFormatOptions = {
@@ -32,6 +33,6 @@ export function formatReadableDate(dateStr: string, timezone?: string): string {
     };
     return new Intl.DateTimeFormat('en-US', options).format(date);
   } catch {
-    return dateStr;
+    return dateStr || '';
   }
 }

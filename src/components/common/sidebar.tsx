@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Link2, BarChart3, PlusCircle, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Link2, BarChart3, PlusCircle, ChevronLeft, ChevronRight, X, List } from 'lucide-react';
 import { cn } from '../../lib/cn';
 
 interface SidebarProps {
@@ -18,6 +18,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   const navItems = [
     { to: '/create', label: 'Create Link', icon: PlusCircle },
+    { to: '/links', label: 'Links', icon: List },
     { to: '/analytics', label: 'Analytics', icon: BarChart3 },
   ];
 
