@@ -34,6 +34,8 @@ export const CreateLinkPage: React.FC = () => {
         longUrl: values.longUrl,
         expiresAt,
         timezone: values.timezone,
+        title: values.title,
+        backHalf: values.backHalf,
       };
 
       const response = await createLink(requestPayload);
@@ -48,6 +50,7 @@ export const CreateLinkPage: React.FC = () => {
             longUrl: values.longUrl,
             expiresAt,
             timezone: values.timezone,
+            title: values.title || response.shortCode,
           },
         },
       });

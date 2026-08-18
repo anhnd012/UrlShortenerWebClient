@@ -7,6 +7,7 @@ import { LoginPage } from '../pages/login-page';
 import { CreateLinkPage } from '../pages/create-link-page';
 import { CreatedLinkPage } from '../pages/created-link-page';
 import { AnalyticsPage } from '../pages/analytics-page';
+import { LinksPage } from '../pages/links-page';
 import { LinkExpiredPage } from '../pages/link-expired-page';
 import { LinkNotActivePage } from '../pages/link-not-active-page';
 import { NotFoundPage } from '../pages/not-found-page';
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
       {
         path: 'created',
         element: <CreatedLinkPage />,
+      },
+      {
+        path: 'links',
+        element: <LinksPage />,
       },
       {
         path: 'analytics',

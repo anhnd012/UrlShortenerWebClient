@@ -46,6 +46,12 @@ export const createShortLinkFormSchema = z.object({
   customExpirationDate: z.string().optional(),
   customExpirationTime: z.string().optional(),
   timezone: z.string().min(1, 'Timezone is required.'),
+  title: z.string().max(100, 'Title must not exceed 100 characters.').optional(),
+  domain: z.string().optional(),
+  backHalf: z.string()
+    .max(32, 'Back-half must not exceed 32 characters.')
+    .regex(/^[a-zA-Z0-9_-]*$/, 'Only alphanumeric characters, hyphens, and underscores are allowed.')
+    .optional(),
 }).refine((data) => {
   if (data.expirationPreset === 'custom') {
     if (!data.customExpirationDate || !data.customExpirationTime) {
